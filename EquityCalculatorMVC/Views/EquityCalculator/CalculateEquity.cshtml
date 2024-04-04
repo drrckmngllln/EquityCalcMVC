@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+@model List<EquitySchedule>
+
+
+<table class="table">
+    <thead>
+    <td>Balance</td>
+    <td>Due Date</td>
+    <td>Term</td>
+    <td>Payment Info</td>
+    </thead>
+    <tbody>
+    @foreach (var list in @Model.ToList())
+    {
+        <tr>
+            <td>@list.Balance</td>
+            <td>@list.DueDate</td>
+            <td>@list.Term</td>
+            <td>
+                <ul class="list-unstyled">
+                    <li>
+                        <strong>Amount: </strong> @list.PaymentInfo[0].Amount
+                    </li>
+                    <li>
+                        <strong>Interest: </strong> @list.PaymentInfo[0].Interest
+                    </li>
+                    <li>
+                        <strong>Insurance: </strong> @list.PaymentInfo[0].Insurance
+                    </li>
+                    <li>
+                        <strong>Total: </strong> @list.PaymentInfo[0].Total
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    }
+
+    </tbody>
+</table>

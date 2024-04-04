@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+@model EquityCalculator
+
+<div class="row justify-content-center">
+    <div class="col-5">
+        <form method="post" asp-action="CalculateEquity">
+            <div class="card">
+                <div class="card-header">Calculator</div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label class="">Selling Price</label>
+                        <input asp-for="SellingPrice" type="text" class="form-control" placeholder="Selling Price">
+                    </div>
+                    <div class="form-group">
+                        <label class="">Reservation Date</label>
+                        <input asp-for="ReservationDate" type="date" class="form-control" placeholder="Reservation Date">
+                    </div>
+                    <div class="form-group mb-4">
+                        <label class="">Equity Term</label>
+                        <input asp-for="EquityTerm" type="number" class="form-control" placeholder="Equity Term">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="submit">Compute</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
