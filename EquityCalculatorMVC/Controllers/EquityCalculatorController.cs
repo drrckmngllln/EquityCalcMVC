@@ -28,11 +28,6 @@ public class EquityCalculatorController : Controller
 
         for (int i = 0; i <= equityCalculator.EquityTerm - 1; i++)
         {
-            decimal GetTotal()
-            {
-                return amount + interest + insurance;
-            }
-
             var equity = new EquitySchedule
             {
                 Id = i + 1,
@@ -54,7 +49,11 @@ public class EquityCalculatorController : Controller
             equitySchedule.Add(equity);
             balance -= amount;
         }
+        decimal GetTotal()
+        {
+            return amount + interest + insurance;
+        }
+
         return View("CalculateEquity", equitySchedule);
     }
-
 }

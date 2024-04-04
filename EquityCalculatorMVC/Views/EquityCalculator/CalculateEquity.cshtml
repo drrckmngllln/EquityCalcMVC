@@ -17,12 +17,12 @@
     {
         <tr>
             <td>@list.Balance</td>
-            <td>@list.DueDate</td>
+            <td>@list.DueDate.Date</td>
             <td>@list.Term</td>
             <td>
                 <ul class="list-unstyled">
                     <li>
-                        <strong>Amount: </strong> @list.PaymentInfo[0].Amount
+                        <strong>Amount: </strong>@list.PaymentInfo[0].Amount
                     </li>
                     <li>
                         <strong>Interest: </strong> @list.PaymentInfo[0].Interest
